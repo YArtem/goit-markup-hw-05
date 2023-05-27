@@ -153,17 +153,35 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--menu-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .menu-item-link {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--menu-color);
-} */
+
 .menu .link:hover,
 .menu .link:focus {
   color: #404bbf;
+}
+/* Задаємо нижню синю полоску неа активній сторінці  */
+
+.studio::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 4px;
+  background: #404bbf;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+
+.portfolio::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 4px;
+  background: #404bbf;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
 }
 .contacts-item-link,
 .contacts {
@@ -177,6 +195,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--adres-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-item-link:hover,
 .contacts-item-link:focus {
@@ -203,6 +222,8 @@ body {
   /* ------робимо відступи з гори та низу для секції хіро----- */
   padding-top: 188px;
   padding-bottom: 188px;
+  height: 600;
+  margin: 0 auto;
 }
 
 /* ------стилі заголовку хіро----- */
@@ -239,6 +260,8 @@ body {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #ffffff;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -420,6 +443,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ----- Робимо ховер та фокус іконкам соцмереж ----- */
 .social-list-link:hover,
@@ -472,6 +496,8 @@ body {
   align-items: center;
   justify-content: center;
   color: #8e8f99;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-list .customers-list-item {
   width: 168px;
@@ -562,6 +588,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ----- Робимо ховер та фокус іконкам соцмереж ----- */
 .footer-social-list-link:hover,
@@ -605,6 +632,8 @@ body {
   text-align: center;
   letter-spacing: 0.04em;
   color: var(--btn-portfolio-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .applicationarea-btn:hover,
 .applicationarea-btn:focus {
@@ -670,4 +699,83 @@ body {
 .project-item-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+/* робимо оверлей */
+.overlay {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background-color: rgba(77, 90, 229, 0.75);
+  padding: 40px 32px;
+
+  /* задаємо позиціонування оверлею */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wrapper-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.project-item-link:hover .overlay,
+.project-item-link:focus .overlay {
+  transform: translate(0%);
+}
+/*  --- ---- ------- Модальне вікно ------- ---- --- */
+.backdrop {
+  /* задаємо  задній фон  */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* робимо саме модальне вікно */
+.modal {
+  width: 408px;
+  height: 584px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  /* позиціонуцємо модальне вікно по середині */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Робимо кнопку закриття модального вікна */
+.btn-modal-clouse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* виставляємо кнопку по макету */
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+/* Приховуємо кнопку */
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }

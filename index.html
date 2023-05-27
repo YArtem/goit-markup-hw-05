@@ -25,7 +25,7 @@
             >Web<span class="accent-header">Studio</span></a
           >
           <ul class="menu list">
-            <li class="menu-item">
+            <li class="menu-item studio">
               <a class="menu-item-link link" href="./index.html">Studio</a>
             </li>
             <li class="menu-item">
@@ -62,7 +62,9 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-btn" type="button">Order Service</button>
+          <button class="hero-btn" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!-- section1 -->
@@ -562,5 +564,16 @@
         </div>
       </div>
     </footer>
+    <!-- модальне вікно -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="btn-modal-clouse" data-modal-close>
+          <svg class="modal-clouse-icon" Width="24px" Height="24px">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
