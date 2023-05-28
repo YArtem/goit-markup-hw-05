@@ -216,6 +216,10 @@ body {
 .contacts-item-link:focus {
   color: #404bbf;
 }
+.studio,
+.portfolio {
+  color: #404bbf;
+}
 
 /* ====== ==== === стилі hero === ==== ===== */
 
